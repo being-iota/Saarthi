@@ -24,7 +24,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.SHIKSHAK_SAARTHI_LOCK !== "uu-shikshak-saarthi-authorized") {
+  const isAuthorized = 
+    process.env.SHIKSHAK_SAARTHI_LOCK === "uu-shikshak-saarthi-authorized" ||
+    process.env.VERCEL_GIT_REPO_OWNER === "being-iota" ||
+    process.env.VERCEL_GIT_REPO_OWNER === "ratnapriya2954-1016";
+
+  if (!isAuthorized) {
     return (
       <html lang="en">
         <body style={{

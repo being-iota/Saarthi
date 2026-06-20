@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
-if (process.env.SHIKSHAK_SAARTHI_LOCK !== 'uu-shikshak-saarthi-authorized') {
+const isAuthorized = 
+  process.env.SHIKSHAK_SAARTHI_LOCK === 'uu-shikshak-saarthi-authorized' ||
+  process.env.VERCEL_GIT_REPO_OWNER === 'being-iota' ||
+  process.env.VERCEL_GIT_REPO_OWNER === 'ratnapriya2954-1016';
+
+if (!isAuthorized) {
   console.error('\n\x1b[31m%s\x1b[0m', '=======================================================');
   console.error('\x1b[31m%s\x1b[0m', '🛑 ERROR: UNAUTHORIZED SETUP & EXECUTION PREVENTED.');
   console.error('\x1b[31m%s\x1b[0m', 'This project is proprietary and locked.');
