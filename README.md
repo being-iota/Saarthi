@@ -58,52 +58,10 @@ Switch teaching styles and speech accents dynamically to match different regiona
 
 ---
 
-## 💻 Running Locally
+## 🔒 Setup & Licensing
 
-### 1. Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) (v18+) and Git installed.
-
-### 2. Installation
-```bash
-# Clone the repository
-git clone https://github.com/being-iota/embody.git
-cd embody
-
-# Install dependencies
-npm install
-```
-
-### 3. Setup Environment Variables
-Create a `.env.local` file in the root directory:
-```env
-OPENROUTER_API_KEY=your_openrouter_api_key
-GROQ_API_KEY=your_groq_api_key
-OPENAI_API_KEY=your_openai_api_key
-```
-
-### 4. Run the Development Server
-To avoid compilation conflicts between builds and development mode, clear the cache and run:
-```bash
-# Windows (PowerShell)
-if (Test-Path .next) { Remove-Item -Recurse -Force .next }; npm run dev
-
-# macOS / Linux (Terminal)
-rm -rf .next && npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
----
-
-## 📦 Deployment
-
-### Vercel Deployment
-1. Push your repository code to GitHub:
-   ```bash
-   git add .
-   git commit -m "docs: add premium README and screenshots"
-   git push origin main
-   ```
-2. Import the repository into your [Vercel Dashboard](https://vercel.com).
-3. Configure the environment variables (`OPENROUTER_API_KEY`, etc.).
-4. Click **Deploy**.
+> [!CAUTION]
+> **PROPRIETARY & LOCKED SYSTEM**
+> This repository is private/closed and contains protected proprietary software. Unauthorized installation, compilation, distribution, deployment, or execution of this system is strictly prohibited.
+>
+> The codebase is built with strict runtime environment verification checks. Any attempts to run the server or compile the assets without valid authorization credentials (e.g. `SHIKSHAK_SAARTHI_LOCK`) will result in build-time exits and execution locks.

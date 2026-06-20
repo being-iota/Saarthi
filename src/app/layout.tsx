@@ -24,6 +24,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (process.env.SHIKSHAK_SAARTHI_LOCK !== "uu-shikshak-saarthi-authorized") {
+    return (
+      <html lang="en">
+        <body style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          margin: 0,
+          fontFamily: "system-ui, sans-serif",
+          backgroundColor: "#0d0d0d",
+          color: "#ff5252",
+          textAlign: "center",
+          padding: "20px"
+        }}>
+          <div>
+            <h1 style={{ fontSize: "36px", fontWeight: "800", marginBottom: "15px" }}>🛑 Unauthorized Usage Detected</h1>
+            <p style={{ fontSize: "18px", color: "#a0a0a0", maxWidth: "500px", margin: "0 auto" }}>
+              This Classroom OS application is private and proprietary. Setup, deployment, and execution are locked.
+            </p>
+          </div>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <body className="font-sans antialiased bg-[#FAF8F5] bg-grid-dots">
@@ -32,3 +59,4 @@ export default function RootLayout({
     </html>
   );
 }
+
